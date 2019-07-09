@@ -19,7 +19,7 @@ class KomaList {
     }
   }
   
-  AbstractKoma getSelectedKoma() {
+ AbstractKoma getSelectedKoma() {
     for (AbstractKoma k : komaArray) {
       if (k.kStat.selected) return k;
     }
@@ -37,5 +37,4 @@ class KomaList {
     }
     return null;
   }
-  
 }
