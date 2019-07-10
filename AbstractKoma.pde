@@ -29,12 +29,12 @@ abstract class AbstractKoma {
     fill(#FF0000, SQUARESIZE);
     rect(this.x*SQUARESIZE, this.y*SQUARESIZE, SQUARESIZE, SQUARESIZE);
   }
-  
-  void move(int toX, int toY) {
+    void move(int toX, int toY) {
     AbstractKoma koma = komaList.getKomaFromPlace(toX, toY);
     if (koma==null) this.updatePos(toX, toY);
     else if (koma.team != gs.turn) this.moveAndCapture(koma, toX, toY);
   }
+
   
 void updatePos(int toX, int toY) {
     this.x=toX;
@@ -47,6 +47,7 @@ void updatePos(int toX, int toY) {
     this.updatePos(toX, toY);
     if (enemy!=null) enemy.captured();
   }
+
 
   void captured() {
     this.kStat.captured=true;
